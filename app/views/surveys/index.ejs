@@ -1,0 +1,13 @@
+<% include ../header %>
+
+<h1><%- title %></h1>
+
+<% if (surveys.length) { %>
+	<ul>
+		<% surveys.forEach(function (survey) { %>
+			<li><%= survey.title %></li>
+		<% }) %>
+	</ul>
+<% } %>
+
+<% include ../footer %>
