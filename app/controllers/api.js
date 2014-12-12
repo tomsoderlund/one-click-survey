@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Survey = mongoose.model('Survey');
 
-var API_PASSWORD = 'no4EgsuY7PDZi';
+var API_PASSWORD = process.env.ONECLICKSURVEY_PASSWORD;
 
 module.exports = {
 
@@ -25,10 +25,6 @@ module.exports = {
 	},
 
 	// Create new survey
-	/*
-curl -X POST -H "Content-Type: application/json" -d '{ "name": "my_survey", "redirectUrl": "http://www.google.com" }' http://localhost:3004/api/surveys?password=no4EgsuY7PDZi
-curl -X POST -H "Content-Type: application/json" -d '{ "name": "my_survey_with_options", "redirectUrl": "http://www.google.com", "surveyOptions": { "option1": {"count": 1}, "option2": {"count": 0} } }' http://localhost:3004/api/surveys?password=no4EgsuY7PDZi
-	*/
 	create: function (req, res, next) {
 		if (req.query.password === API_PASSWORD) {
 			var newSurvey = new Survey(req.body);
@@ -47,10 +43,6 @@ curl -X POST -H "Content-Type: application/json" -d '{ "name": "my_survey_with_o
 	},
 
 	// Delete survey
-	/*
-		curl -X DELETE http://localhost:3004/api/surveys/5477a6f88906b9fc766c843e?password=no4EgsuY7PDZi
-		curl -X DELETE http://localhost:3004/api/surveys/ALL?password=no4EgsuY7PDZi
-	*/
 	delete: function (req, res, next) {
 		if (req.query.password === API_PASSWORD) {
 			var searchParams;
