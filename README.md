@@ -28,3 +28,13 @@ API requests:
 ## Implementation
 
 Based on the [Yeoman Express generator](https://github.com/petecoop/generator-express) with the "MVC" option.
+
+## Deploying on Heroku
+
+	# Set up and configure app
+	heroku create MYAPPNAME
+	heroku addons:add mongolab
+	heroku config:set NODE_ENV=production
+
+	# Set password used in API requests
+	heroku config:set ONECLICKSURVEY_PASSWORD=MYPASSWORD
