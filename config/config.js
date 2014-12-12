@@ -30,7 +30,7 @@ var config = {
 			name: 'one-click-survey'
 		},
 		port: 3000,
-		db: process.env.MONGOHQ_URL || 'mongodb://localhost/one-click-survey-production'
+		db: process.env.MONGOLAB_URI || 'mongodb://localhost/one-click-survey-production'
 
 	}
 
