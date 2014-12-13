@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var cors = require('cors');
+var filters = require('./filters');
 
 module.exports = function (app, config) {
 	app.set('views', config.root + '/app/views');

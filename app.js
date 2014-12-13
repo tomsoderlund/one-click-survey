@@ -17,4 +17,5 @@ var app = express();
 
 require('./config/express')(app, config);
 
+console.log('one-click-survey running on http://localhost:' + (process.env.PORT || config.port));
 app.listen(process.env.PORT || config.port);

@@ -1,7 +1,7 @@
 module.exports = {
 
 	index: function (req, res, next) {
-		res.render('index', { title: 'one-click-survey' });
+		res.render('index', { title: 'One Click Survey' });
 	}
 
 }

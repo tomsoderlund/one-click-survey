@@ -21,9 +21,9 @@ module.exports = function (app, config) {
 	router.delete('/api/surveys/:id', apiController.delete);
 
 	router.get('/surveys', surveysController.index);
+	router.get('/surveys/:nameHash', surveysController.show);
+	router.get('/:survey/:option', surveysController.click);
 
 	router.get('/', startController.index);
-
-	router.get('/:survey/:option', surveysController.clickOption);
 
 };

@@ -1,0 +1,11 @@
+<% include ../header %>
+
+<h1><%- survey.name %></h1>
+
+<table>
+	<% optionCount.forEach(function (option) { %>
+		<tr><td><%= option[0] %></td><td><%= option[1] %></td></tr>
+	<% }) %>
+</table>
+
+<% include ../footer %>

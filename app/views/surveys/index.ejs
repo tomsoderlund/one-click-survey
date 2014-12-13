@@ -1,11 +1,11 @@
 <% include ../header %>
 
-<h1><%- title %></h1>
+<h1>Surveys</h1>
 
 <% if (surveys.length) { %>
 	<ul>
 		<% surveys.forEach(function (survey) { %>
-			<li><%= survey.title %></li>
+			<li><a href="surveys/<%=: survey.name | encodify %>"><%= survey.name %></a></li>
 		<% }) %>
 	</ul>
 <% } %>
