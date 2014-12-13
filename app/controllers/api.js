@@ -8,20 +8,25 @@ var API_PASSWORD = process.env.ONECLICKSURVEY_PASSWORD;
 module.exports = {
 
 	list: function (req, res, next) {
-		var searchQuery = {};
-		if (req.query.from) {
-			var currentTime = new Date();
-			searchQuery = { dateCreated: { "$gte": new Date(req.query.from), "$lt": currentTime } };
-		}
+		if (req.query.password === API_PASSWORD) {
+			var searchQuery = {};
+			if (req.query.from) {
+				var currentTime = new Date();
+				searchQuery = { dateCreated: { "$gte": new Date(req.query.from), "$lt": currentTime } };
+			}
 
-		Survey.find(searchQuery, null, { sort: {dateCreated: -1} }, function (err, surveys) {
-			if (err) {
-				return res.json(400, err);
-			}
-			else {
-				return res.json(surveys);
-			}
-		});
+			Survey.find(searchQuery, null, { sort: {dateCreated: -1} }, function (err, surveys) {
+				if (err) {
+					return res.json(400, err);
+				}
+				else {
+					return res.json(surveys);
+				}
+			});
+		}
+		else {
+			return res.json(401, 'Unauthorized');
+		}
 	},
 
 	// Create new survey
