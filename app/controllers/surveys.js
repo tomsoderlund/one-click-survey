@@ -62,12 +62,11 @@ module.exports = {
 	},
 
 	click: function (req, res, next) {
+		if (req.query.user) {
+			var surveyName = req.params.survey;
+			var optionName = req.params.option;
+			var userId = req.query.user.replace(/\./g, '_');
 
-		var surveyName = req.params.survey;
-		var optionName = req.params.option;
-		var userId = req.query.user.replace(/\./g, '_');
-
-		if (userId) {
 			var searchParams = { name: surveyName };
 
 			Survey.find(
