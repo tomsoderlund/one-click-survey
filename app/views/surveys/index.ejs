@@ -5,7 +5,7 @@
 <% if (surveys.length) { %>
 	<ul>
 		<% surveys.forEach(function (survey) { %>
-			<li><a href="surveys/<%=: survey.name | encodify %>"><%= survey.name %></a></li>
+			<li><a href="surveys/<%=: survey._id %>"><%= survey.name %></a></li>
 		<% }) %>
 	</ul>
 <% } %>

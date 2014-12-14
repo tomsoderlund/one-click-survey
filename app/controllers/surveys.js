@@ -24,30 +24,24 @@ module.exports = {
 	},
 
 	show: function (req, res, next) {
-		if (req.params.nameHash) {
-			var buf = new Buffer(req.params.nameHash, 'base64')
-			var surveyName = buf.toString();
-			Survey.find(
-				{ name: surveyName },
-				function(findErr, surveys) {
+		if (req.params.id) {
+			Survey.findById(
+				req.params.id,
+				function (findErr, survey) {
 					if (!findErr) {
 						// Found!
-						if (surveys[0] !== undefined) {
-							var survey = surveys[0];
+						var optionValues = _.values(survey.votes);
+						var optionCount = _.countBy(optionValues, function (option) {
+							return option;
+						});
+						var optionCountArray = _.pairs(optionCount);
+						optionCountArray = _.sortBy(optionCountArray, function (option) { return -option[1]; });
 
-							var optionValues = _.values(survey.votes);
-							var optionCount = _.countBy(optionValues, function (option) {
-								return option;
-							});
-							var optionCountArray = _.pairs(optionCount);
-							optionCountArray = _.sortBy(optionCountArray, function (option) { return -option[1]; });
-
-							res.render('surveys/show', {
-								title: survey.name + ' - One Click Survey',
-								survey: survey,
-								optionCount: optionCountArray
-							});
-						}
+						res.render('surveys/show', {
+							title: survey.name + ' - One Click Survey',
+							survey: survey,
+							optionCount: optionCountArray
+						});
 					}
 					else {
 						// Error
