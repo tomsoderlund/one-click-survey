@@ -1,6 +1,6 @@
 # One Click Survey
 
-API service for creating simple one-click email surveys.
+API service for a “click counter”, e.g. for creating simple one-click email surveys.
 
 ## Usage
 
@@ -10,11 +10,19 @@ API service for creating simple one-click email surveys.
 
 > “What flavour is your favourite?
 > 
-> 1. Chocolate (link to `http://localhost:3004/my_survey/chocolate?user=[USER_ID]`)
-> 2. Strawberry (link to `http://localhost:3004/my_survey/strawberry?user=[USER_ID]`)
-> 3. Vanilla (link to `http://localhost:3004/my_survey/vanilla?user=[USER_ID]`)”
+> 1. Chocolate (link to `http://localhost:3004/flavour_survey/chocolate?user=[USER_ID]`)
+> 2. Strawberry (link to `http://localhost:3004/flavour_survey/strawberry?user=[USER_ID]`)
+> 3. Vanilla (link to `http://localhost:3004/flavour_survey/vanilla?user=[USER_ID]`)”
 
-[USER_ID] can be any unique identifier for the user, and verifies that each user is only counted once.
+or:
+
+> “How likely is it you would recommend our product (1-3, where 3 is best)?
+> 
+> 1 (link to `http://localhost:3004/recommend_survey/1?user=[USER_ID]`)
+> 2 (link to `http://localhost:3004/recommend_survey/2?user=[USER_ID]`)
+> 3 (link to `http://localhost:3004/recommend_survey/3?user=[USER_ID]`)”
+
+[USER_ID] can be any unique identifier for the user (email, internal user ID), and verifies that each user is only counted _once_, and that each user only gets _one_ vote.
 
 3) See a report on what the users clicked the most: `http://localhost:3004/surveys?password=MYPASSWORD`
 
@@ -31,7 +39,9 @@ Server will default to **http://localhost:3004**
 
 ## API
 
-	http://localhost:3004/api/surveys
+List surveys
+
+	curl http://localhost:3004/api/surveys?password=MYPASSWORD
 
 Create new survey:
 
