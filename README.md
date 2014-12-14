@@ -18,9 +18,9 @@ or:
 
 > “How likely is it you would recommend our product (1-3, where 3 is best)?
 > 
-> 1 (link to `http://localhost:3004/recommend_survey/1?user=[USER_ID]`)
-> 2 (link to `http://localhost:3004/recommend_survey/2?user=[USER_ID]`)
-> 3 (link to `http://localhost:3004/recommend_survey/3?user=[USER_ID]`)”
+> 1. (link to `http://localhost:3004/recommend_survey/1?user=[USER_ID]`)
+> 2. (link to `http://localhost:3004/recommend_survey/2?user=[USER_ID]`)
+> 3. (link to `http://localhost:3004/recommend_survey/3?user=[USER_ID]`)”
 
 [USER_ID] can be any unique identifier for the user (email, internal user ID), and verifies that each user is only counted _once_, and that each user only gets _one_ vote.
 
