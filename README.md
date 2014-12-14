@@ -62,6 +62,7 @@ Delete all surveys:
 ## Implementation
 
 Based on the [Yeoman Express generator](https://github.com/petecoop/generator-express) with the "MVC" option.
+Built on Node.js, Express (with EJS) and MongoDB.
 
 ## Deploying on Heroku
 
