@@ -55,7 +55,7 @@ module.exports = {
 				searchParams = {};
 			}
 			else {
-				{ _id: req.params.id }
+				searchParams = { _id: req.params.id }
 			}
 
 			Survey.remove(
@@ -65,7 +65,7 @@ module.exports = {
 						res.json(500, surveyErr);
 					}
 					else {
-						res.json(200, 'Deletion complete');
+						res.json(200, 'Deleted ' + numberAffected + ' surveys');
 					}
 				}
 			);

@@ -28,7 +28,7 @@ module.exports = {
 			Survey.findById(
 				req.params.id,
 				function (findErr, survey) {
-					if (!findErr) {
+					if (!findErr && survey) {
 						// Found!
 						var optionValues = _.values(survey.votes);
 						var optionCount = _.countBy(optionValues, function (option) {
@@ -45,7 +45,7 @@ module.exports = {
 					}
 					else {
 						// Error
-						res.send(404, findErr);
+						res.send(404, 'Could not find survey ' + req.params.id + '');
 					}
 				}
 			);
