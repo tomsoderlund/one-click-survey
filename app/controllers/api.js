@@ -1,5 +1,6 @@
 'use strict';
 
+var _ = require('lodash');
 var mongoose = require('mongoose');
 var Survey = mongoose.model('Survey');
 
@@ -45,6 +46,22 @@ module.exports = {
 		else {
 			return res.json(401, 'Unauthorized');
 		}
+	},
+
+	// Update survey
+	update: function (req, res, next) {
+		Survey.update(
+			{ _id: req.params.id },
+			req.body,
+			function (updateErr, numberAffected, rawResponse) {
+				if (updateErr) {
+					res.json(500, updateErr);
+				}
+				else {
+					res.json(200, 'Updated survey ' + req.params.id);
+				}
+			}
+		);
 	},
 
 	// Delete survey

@@ -37,6 +37,10 @@ Create new survey:
 
 	curl -X POST -H "Content-Type: application/json" -d '{ "name": "my_survey", "redirectUrl": "http://www.google.com" }' http://localhost:3004/api/surveys?password=MYPASSWORD
 
+Update survey:
+
+	curl -X PUT -H "Content-Type: application/json" -d '{ "name": "my_new_survey", "redirectUrl": "https://duckduckgo.com" }' http://localhost:3004/api/surveys/548cbb2b1ad50708212193d8?password=MYPASSWORD
+
 Delete survey:
 
 	curl -X DELETE http://localhost:3004/api/surveys/5477a6f88906b9fc766c843e?password=MYPASSWORD

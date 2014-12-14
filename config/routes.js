@@ -18,6 +18,7 @@ module.exports = function (app, config) {
 
 	router.get('/api/surveys', apiController.list);
 	router.post('/api/surveys', apiController.create);
+	router.put('/api/surveys/:id', apiController.update);
 	router.delete('/api/surveys/:id', apiController.delete);
 
 	router.get('/surveys', surveysController.index);
