@@ -26,11 +26,11 @@ or:
 
 3) See a report on what the users clicked the most: `http://localhost:3004/surveys?password=MYPASSWORD`
 
-> flavour_survey
+> **flavour_survey**
 >
-> chocolate: 42
-> strawberry: 25
-> vanilla: 7
+> * chocolate: 42
+> * strawberry: 25
+> * vanilla: 7
 
 ## How to Run
 
