@@ -26,6 +26,12 @@ or:
 
 3) See a report on what the users clicked the most: `http://localhost:3004/surveys?password=MYPASSWORD`
 
+> flavour_survey
+>
+> chocolate: 42
+> strawberry: 25
+> vanilla: 7
+
 ## How to Run
 
 Just start with:
@@ -36,6 +42,11 @@ Just start with:
 	grunt
 
 Server will default to **http://localhost:3004**
+
+## Survey properties	
+
+* `name`: your own unique name/reference to this survey.
+* `redirectUrl`: where to forward the user after clicking.
 
 ## API
 
