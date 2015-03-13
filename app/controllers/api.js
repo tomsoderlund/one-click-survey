@@ -30,6 +30,23 @@ module.exports = {
 		}
 	},
 
+	read: function (req, res, next) {
+		if (req.query.password === API_PASSWORD) {
+
+			Survey.findById(req.params.id, function (err, survey) {
+				if (err) {
+					return res.json(400, err);
+				}
+				else {
+					return res.json(survey);
+				}
+			});
+		}
+		else {
+			return res.json(401, 'Unauthorized');
+		}
+	},
+
 	// Create new survey
 	create: function (req, res, next) {
 		if (req.query.password === API_PASSWORD) {

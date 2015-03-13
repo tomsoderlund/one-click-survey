@@ -17,6 +17,7 @@ module.exports = function (app, config) {
 	var surveysController = require(config.root + '/app/controllers/surveys');
 
 	router.get('/api/surveys', apiController.list);
+	router.get('/api/surveys/:id', apiController.read);
 	router.post('/api/surveys', apiController.create);
 	router.put('/api/surveys/:id', apiController.update);
 	router.delete('/api/surveys/:id', apiController.delete);
