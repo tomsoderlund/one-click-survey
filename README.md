@@ -2,6 +2,8 @@
 
 API service for a “click counter”, e.g. for creating simple one-click email surveys.
 
+![One Click Survey example](example.png)
+
 ## Usage
 
 1) Create a new survey (see “Create new survey” under [API](#api) below).
