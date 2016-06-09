@@ -59,7 +59,7 @@ module.exports = {
 		if (req.query.user) {
 			var surveyName = req.params.survey;
 			var optionName = req.params.option;
-			var userId = req.query.user.replace(/\./g, '_');
+			var userId = req.query.user.replace(/\./g, '*');
 
 			var searchParams = { name: surveyName };
 
@@ -111,7 +111,6 @@ module.exports = {
 			res.send(400, 'User not specified.');
 		}
 
-
-		}
+	},
 
 }
