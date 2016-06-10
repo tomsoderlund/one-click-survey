@@ -4,6 +4,7 @@ API service for a “click counter”, e.g. for creating simple one-click email 
 
 ![One Click Survey example](example.png)
 
+
 ## Usage
 
 1) Create a new survey (see “Create new survey” under [API](#api) below).
@@ -34,6 +35,7 @@ or:
 > * strawberry: 25
 > * vanilla: 7
 
+
 ## How to Run
 
 Just start with:
@@ -45,10 +47,13 @@ Just start with:
 
 Server will default to **http://localhost:3004**
 
+
 ## Survey properties	
 
 * `name`: your own unique name/reference to this survey.
+* `option`: the choice that was clicked.
 * `redirectUrl`: where to forward the user after clicking.
+
 
 ## API
 
@@ -72,10 +77,12 @@ Delete all surveys:
 
 	curl -X DELETE http://localhost:3004/api/surveys/ALL?password=MYPASSWORD
 
+
 ## Implementation
 
 Based on the [Yeoman Express generator](https://github.com/petecoop/generator-express) with the "MVC" option.
 Built on Node.js, Express (with EJS) and MongoDB.
+
 
 ## Deploying on Heroku
 
@@ -86,3 +93,11 @@ Built on Node.js, Express (with EJS) and MongoDB.
 
 	# Set password used in API requests
 	heroku config:set ONECLICKSURVEY_PASSWORD=MYPASSWORD
+
+
+## Todo
+
+* Send `user` and `option` on to final destination in a customizable format, to support e.g. Google Forms.
+* Customizable `redirectUrl` for each option (e.g. as click URL parameter).
+* Use pure 302 redirect instead of HTML page.
+* Suggestion: Use `name` instead of `id` in all routes.

@@ -1,6 +1,6 @@
 {
   "name": "one-click-survey",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -22,9 +22,7 @@
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-develop": "~0.4.0",
-    "grunt-sass": "^0.16.1",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-compass": "~0.9.0",
     "request": "~2.36.0",
     "time-grunt": "~0.3.2",
     "load-grunt-tasks": "~0.6.0"
