@@ -2,8 +2,14 @@
 
 API service for a “click counter”, e.g. for creating simple one-click email surveys.
 
-![One Click Survey example](example.png)
+Made by the team at **Weld** ([www.weld.io](https://www.weld.io?utm_source=github-one-click-survey)), the code-free app and web creation tool:
 
+[![Weld](https://s3-eu-west-1.amazonaws.com/weld-social-and-blog/gif/weld_explained.gif)](https://www.weld.io?utm_source=github-one-click-survey)
+
+
+## Screenshot
+
+![One Click Survey example](example.png)
 
 ## Usage
 
